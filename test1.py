@@ -129,7 +129,7 @@
 #    clf = neighbors.KNeighborsClassifier(n_neighbors, weights=weights)
 #    clf.fit(X, y)
 #
-##Plot the decision boundary.  FOr that we will assign a color
+##Plot the decision boundary.  For that we will assign a color
 ##to each point in the mesh [x_min, m_max]x[y_min, y_max]
 #
 #    x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
@@ -296,5 +296,3 @@ plt.xlabel("Decision Scores")
 
 plt.subplots_adjust(wspace=0.25)
 plt.show()
-
-
