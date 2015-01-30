@@ -1,0 +1,133 @@
+me:  Hey dude
+I've got an ML question for you
+http://scikit-learn.org/stable/auto_examples/svm/plot_iris.html
+if you look at that script
+  around line 10 it says "h = .02 # step size in the mesh"
+  what is "the mesh"?
+   Sent at 6:18 PM on Thursday
+    Will:  i'm pretty sure that's just the grid you plot in
+    so you can think of a min and max x and y value, but then you need to divide that continuous space into discrete spaces to represent it in the computer
+     me:  dude
+     it's funny
+      Will:  a smaller mesh size leads to a higher resolution plot
+       me:  as you said that
+       i had that exact though
+       t
+       I was thinking that the mesh represented some multidimensional universe or something
+       ha
+       but it's just like the base that my mother did her needlepoint in when I was a kid
+        Will:  exactly  :-)
+         Sent at 6:21 PM on Thursday
+          me:  dude
+          I honestly have absolutely no idea what I'm doing in my first project
+          I have to create a KNN, NN, decision tree, SVM, and decision tree + boost
+          for two classification problems
+            so I'm just copying down the scitkit-learn samples right now
+            and hoping something sticks after my trip home
+            ha
+             Will:  oh man, that's a pretty serious project
+             are you allowed to use libraries like sklearn?
+             or do you have to implement everything from scratch?
+              Sent at 6:25 PM on Thursday
+               me:  using libraries
+               more emphasis is on the problem and the analysis
+               it's 15% of my final grade
+               it's due MOnday at 11:55 pm
+               so I'm just slightly thankful I've got a few days
+               but I'm somewhat freaking out
+               haha
+                Will:  oh man, yeah you should get on that!
+                though if you can use sklearn then you've got a huge advantage
+                because it literally implements all the learning algorithms you described
+                actually, maybe not the NN
+                 me:  well I'm working on it now
+                  Will:  i know it does NNs, but i think they're just for unsupervised learning
+                   me:  I have been for a couple days
+                   I'm just not moving fast enough
+                   ha
+                    Sent at 6:28 PM on Thursday
+                     me:  also I don't think I can get away with using the iris dataset
+                     since, you know, ever sklearn example uses it
+                      Sent at 6:29 PM on Thursday
+                       me:  you know what? I think I'm going to be okay
+                       I am just going to copy these scripts for now
+                       let them marinate for a couple hours
+                       re-read when I get home
+                       dig into the documentation a bit
+                       make them work for the data set I found
+                       and see where it goes from there
+                        Sent at 6:32 PM on Thursday
+                         Will:  yeah dude, sounds like a solid plan!
+                         so the assignment is to solve two classification problems with those algorithms?
+                         any validation work?
+                          Sent at 6:35 PM on Thursday
+                           me:  yeah I'll have to do the testing
+                           and show the results
+                           so the point is basically like "i have these two classification problems, and I take these approaches, and these are my results, here's what I learned by doing this"
+                           so the technical work is really just a part of it, I would say < 50%
+                            Sent at 6:40 PM on Thursday
+                             me:  got any suggestions on the validation work?
+                             or the analysis?
+                             or using a boosting alrgorithm?
+                              Sent at 6:41 PM on Thursday
+                               Will:  use this for validation: http://scikit-learn.org/stable/modules/generated/sklearn.cross_validation.KFold.html#sklearn.cross_validation.KFold
+                               as far as analysis, i'm not entirely sure what you mean
+                               also, make sure you validate the parameters of your model
+                               http://scikit-learn.org/stable/modules/generated/sklearn.grid_search.GridSearchCV.html#sklearn.grid_search.GridSearchCV
+                               ^ that will let you specify a list of parameters to try
+                                me:  what does that mean
+                                "validate the parameters of the model"
+                                ?
+                                 Will:  so for instance, with SVMs you have a regularization parameter
+                                 but what's the best value of that parameter given your data?
+                                  me:  oh got it
+                                   Will:  well, there's almost never an analytical way to find that value
+                                   so you have to find it experimentally
+                                    Sent at 6:46 PM on Thursday
+                                     me:  okay got it
+                                     that makes a lot of sense
+                                      Will:  cool  :-)
+                                      and sklearn has bagged and boosted versions of decision trees, so you should be all set there
+                                       me:  okay
+                                       what should I used for my neural network?
+                                        Will:  i don't think the general ensemble tools have that though
+                                         me:  what do you mean?
+                                          Will:  oh, never mind: http://scikit-learn.org/stable/modules/classes.html#module-sklearn.ensemble
+                                          for the adaboost and adabagged estimators, you can pass in a "base estimator"
+                                             me:  so the base estimator would be my original decision tree?
+                                              Will:  you would pass in an "unlearned" decision tree
+                                              or svm
+                                              or whatever you want
+                                               me:  "unlearned" decision tree?
+                                               I don't get it
+                                                Will:  and as far as NNs go, sklearn doesn't look like it has a supervised neural network
+                                                a decision tree object that has been instantiated, but hasn't been fit to any data
+                                                 me:  oh
+                                                 OHH
+                                                 got i9t
+                                                 it
+                                                 thanks man!
+                                                  Will:  np!
+                                                  maybe you could take a look at pybrain: http://pybrain.org/
+                                                   me:  okay
+                                                    Will:  it dosen't look like it's under rapid development
+                                                    it was recently tagged on the github page
+                                                    so it is under some development
+                                                     Sent at 6:53 PM on Thursday
+                                                      Will:  also, i spent all day fucking around with HAProxy trying to get failover and monitoring to work properly, but had no luck  :-(
+                                                      huge bummer
+                                                      so i gotta talk to Clay tomorrow and try to get him to solve my problem for me  :-)
+                                                       Sent at 6:55 PM on Thursday
+                                                        me:  Clay is a very smart person
+                                                        and talking to him in person always yeilds the best results :-D
+                                                         Will:  yeah he's awesome
+                                                         he pointed me in the right direction this morning, but i just haven't been able to get this to work how i need it to
+                                                         i've read the manual twice
+                                                         and the relevant parts at least 10 times
+                                                         and haven't solved it yet
+                                                          Sent at 6:57 PM on Thursday
+                                                           me:  maybe you need to just step back
+                                                           and let your brain marinate
+                                                           that is the secret man
+                                                           let your subconscious chew on it
+                                                            Sent at 7:00 PM on Thursday
