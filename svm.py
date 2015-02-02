@@ -54,7 +54,8 @@ from pandas import DataFrame, read_csv
 import numpy as np
 import common
 
-inputs, target = common.get_bank_data()
+#inputs, target = common.get_bank_data_inputs_and_target()
+inputs, target = common.get_bc_data_inputs_and_target()
 
 ### SVM
 for C in [0.5, 1.0, 1.5]:

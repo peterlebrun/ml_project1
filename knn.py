@@ -7,24 +7,25 @@ from pandas import DataFrame, read_csv
 import numpy as np
 import common
 
-inputs, target = common.get_bank_data()
+#inputs, target = common.get_bank_data_inputs_and_target()
+inputs, target = common.get_bc_data_inputs_and_target()
 
-n_neighbors = 15
+# the prevailing wisdom seems to be to set "k" to the sqrt of the number of instances
+k = np.floor(np.sqrt(len(inputs)))
+
+for weights in ['uniform', 'distance']:
+    clf = neighbors.KNeighborsClassifier(k, weights = weights)
+    scores = cross_validation.cross_val_score(clf, inputs, target, cv = 10)
+    print("%s: Accuracy: %0.2f (+/- %0.2f)" % (weights, scores.mean(), scores.std() * 2))
 
 #iris = datasets.load_iris()
 #X = iris.data[:, :2]
 #y = iris.target
 
-h = .02 # step size
+#h = .02 # step size
 
-cmap_light = ListedColormap(['#FFAAAA', '#AAFFAA', '#AAAAFF'])
-cmap_bold = ListedColormap(['#FF0000', '#00FF00', '#0000FF'])
-
-for weights in ['uniform', 'distance']:
-    clf = neighbors.KNeighborsClassifier(n_neighbors, weights=weights)
-    scores = cross_validation.cross_val_score(clf, inputs, target, cv = 5)
-    print("%s: Accuracy: %0.2f (+/- %0.2f)" % (weights, scores.mean(), scores.std() * 2))
-
+#cmap_light = ListedColormap(['#FFAAAA', '#AAFFAA', '#AAAAFF'])
+#cmap_bold = ListedColormap(['#FF0000', '#00FF00', '#0000FF'])
 ##Plot the decision boundary.  For that we will assign a color
 ##to each point in the mesh [x_min, x_max] x [y_min, y_max]
 #
