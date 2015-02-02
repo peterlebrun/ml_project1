@@ -5,6 +5,8 @@ from pybrain.supervised.trainers import BackpropTrainer
 from pybrain.tools.validation    import CrossValidator, ModuleValidator
 
 from pandas import DataFrame, read_csv
+from sklearn.cross_validation import train_test_split
+
 import numpy as np
 
 p = read_csv('data_banknote_authentication.txt',
